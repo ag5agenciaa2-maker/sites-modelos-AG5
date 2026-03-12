@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Garage - Design System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            industrial: {
+              950: '#09090b',
+              900: '#18181b',
+              800: '#27272a',
+              700: '#3f3f46',
+            },
+            brand: {
+              red: '#dc2626',
+              'red-dark': '#991b1b',
+              'red-light': '#ef4444',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-industrial {
+      background-color: #09090b;
+    }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .glass-card {
+      background: rgba(24, 24, 27, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(63, 63, 70, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-industrial text-zinc-100 font-sans">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="relative flex items-center justify-center w-10 h-10 bg-red-700 rounded-lg transform rotate-3">
+            <span class="text-white font-black text-2xl -rotate-3">7</span>
+          </div>
+          <span class="text-white font-black text-xl tracking-tighter italic">DESIGN SYSTEM</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#hero" class="text-sm font-bold uppercase tracking-widest hover:text-red-600 transition-colors">Hero</a>
+          <a href="#typography" class="text-sm font-bold uppercase tracking-widest hover:text-red-600 transition-colors">Tipografia</a>
+          <a href="#colors" class="text-sm font-bold uppercase tracking-widest hover:text-red-600 transition-colors">Cores</a>
+          <a href="#components" class="text-sm font-bold uppercase tracking-widest hover:text-red-600 transition-colors">Componentes</a>
+          <a href="#animations" class="text-sm font-bold uppercase tracking-widest hover:text-red-600 transition-colors">Animações</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/40 to-zinc-950"></div>
+      <div class="absolute top-0 left-1/4 w-1 h-full bg-red-600/5 blur-3xl"></div>
+      <div class="absolute top-0 right-1/4 w-1 h-full bg-red-600/5 blur-3xl"></div>
+    </div>
+    
+    <div class="relative z-10 text-center px-6">
+      <div class="mb-8 inline-block">
+        <div class="flex items-center gap-2 bg-zinc-900/90 border border-zinc-800 py-2 px-5 rounded-full text-zinc-300 text-xs md:text-sm uppercase tracking-[0.3em] font-bold">
+          <i data-lucide="star" class="w-4 h-4 text-red-600 fill-red-600"></i>
+          <span>Design System Oficial</span>
+        </div>
+      </div>
+      <h1 class="text-5xl md:text-9xl font-black mb-6 leading-none uppercase tracking-tighter">
+        7 GARAGE <br />
+        <span class="text-gradient">DESIGN SYSTEM</span>
+      </h1>
+      <p class="text-lg md:text-2xl text-zinc-300 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
+        Documentação completa do design language, tokens visuais e padrões de componentes utilizados na landing page premium da 7 Garage.
+      </p>
+    </div>
+  </section>
+
+  <!-- Typography Section -->
+  <section id="typography" class="py-24 px-6 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter italic">Tipografia</h2>
+      
+      <div class="space-y-12">
+        <!-- Heading 1 -->
+        <div class="flex items-center justify-between py-6 border-b border-zinc-800">
+          <div>
+            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-2">Heading 1</p>
+            <h1 class="text-5xl md:text-9xl font-black leading-none uppercase tracking-tighter">Título Épico</h1>
+          </div>
+          <span class="text-zinc-500 font-mono text-sm">80px-144px / 1.0 line-height</span>
+        </div>
+
+        <!-- Heading 2 -->
+        <div class="flex items-center justify-between py-6 border-b border-zinc-800">
+          <div>
+            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-2">Heading 2</p>
+            <h2 class="text-4xl md:text-6xl font-black uppercase leading-none tracking-tighter italic">Subtítulo Premium</h2>
+          </div>
+          <span class="text-zinc-500 font-mono text-sm">40px-60px / 1.0 line-height</span>
+        </div>
+
+        <!-- Heading 3 -->
+        <div class="flex items-center justify-between py-6 border-b border-zinc-800">
+          <div>
+            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-2">Heading 3</p>
+            <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight">Título de Seção</h3>
+          </div>
+          <span class="text-zinc-500 font-mono text-sm">24px-30px / 1.2 line-height</span>
+        </div>
+
+        <!-- Bold Text -->
+        <div class="flex items-center justify-between py-6 border-b border-zinc-800">
+          <div>
+            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-2">Bold L</p>
+            <p class="text-xl font-black uppercase tracking-widest text-white">Texto Destacado Grande</p>
+          </div>
+          <span class="text-zinc-500 font-mono text-sm">20px / 700 weight</span>
+        </div>
+
+        <!-- Body Text -->
+        <div class="flex items-center justify-between py-6 border-b border-zinc-800">
+          <div>
+            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-2">Body Large</p>
+            <p class="text-lg text-zinc-300 leading-relaxed">Texto de parágrafo com maior ênfase, utilizado para descrições e textos explicativos.</p>
+          </div>
+          <span class="text-zinc-500 font-mono text-sm">18px / 1.6 line-height</span>
+        </div>
+
+        <!-- Small Text -->
+        <div class="flex items-center justify-between py-6 border-b border-zinc-800">
+          <div>
+            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-2">Caption</p>
+            <p class="text-xs uppercase tracking-[0.3em] font-black text-zinc-500">Texto de Legenda</p>
+          </div>
+          <span class="text-zinc-500 font-mono text-sm">12px / 0.3em letter-spacing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colors Section -->
+  <section id="colors" class="py-24 px-6 border-t border-zinc-800 bg-zinc-900/20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter italic">Cores & Superfícies</h2>
+      
+      <!-- Brand Colors -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Cores da Marca</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="group">
+            <div class="h-32 bg-red-700 rounded-2xl mb-4 shadow-lg shadow-red-900/20"></div>
+            <p class="font-bold uppercase tracking-wider">Brand Red</p>
+            <p class="text-zinc-500 font-mono text-sm">#dc2626</p>
+          </div>
+          <div class="group">
+            <div class="h-32 bg-red-800 rounded-2xl mb-4"></div>
+            <p class="font-bold uppercase tracking-wider">Red Dark</p>
+            <p class="text-zinc-500 font-mono text-sm">#991b1b</p>
+          </div>
+          <div class="group">
+            <div class="h-32 bg-red-600 rounded-2xl mb-4"></div>
+            <p class="font-bold uppercase tracking-wider">Red Light</p>
+            <p class="text-zinc-500 font-mono text-sm">#ef4444</p>
+          </div>
+          <div class="group">
+            <div class="h-32 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl mb-4"></div>
+            <p class="font-bold uppercase tracking-wider">Gradient</p>
+            <p class="text-zinc-500 font-mono text-sm">135° #dc2626 → #991b1b</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neutral Colors -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Neutros Industriais</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div>
+            <div class="h-24 bg-zinc-950 rounded-xl mb-3 border border-zinc-800"></div>
+            <p class="font-bold text-sm">Zinc 950</p>
+            <p class="text-zinc-500 font-mono text-xs">#09090b</p>
+          </div>
+          <div>
+            <div class="h-24 bg-zinc-900 rounded-xl mb-3 border border-zinc-800"></div>
+            <p class="font-bold text-sm">Zinc 900</p>
+            <p class="text-zinc-500 font-mono text-xs">#18181b</p>
+          </div>
+          <div>
+            <div class="h-24 bg-zinc-800 rounded-xl mb-3"></div>
+            <p class="font-bold text-sm">Zinc 800</p>
+            <p class="text-zinc-500 font-mono text-xs">#27272a</p>
+          </div>
+          <div>
+            <div class="h-24 bg-zinc-700 rounded-xl mb-3"></div>
+            <p class="font-bold text-sm">Zinc 700</p>
+            <p class="text-zinc-500 font-mono text-xs">#3f3f46</p>
+          </div>
+          <div>
+            <div class="h-24 bg-zinc-500 rounded-xl mb-3"></div>
+            <p class="font-bold text-sm">Zinc 500</p>
+            <p class="text-zinc-500 font-mono text-xs">#71717a</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Surfaces -->
+      <div>
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Superfícies & Efeitos</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-8 bg-zinc-950 rounded-2xl border border-zinc-800">
+            <p class="font-bold uppercase tracking-wider mb-2">Base Background</p>
+            <p class="text-zinc-500 text-sm">bg-zinc-950 / #09090b</p>
+          </div>
+          <div class="p-8 glass-card rounded-2xl">
+            <p class="font-bold uppercase tracking-wider mb-2">Glass Card</p>
+            <p class="text-zinc-500 text-sm">backdrop-blur + border</p>
+          </div>
+          <div class="p-8 bg-zinc-900/50 rounded-2xl border border-zinc-800">
+            <p class="font-bold uppercase tracking-wider mb-2">Subtle Surface</p>
+            <p class="text-zinc-500 text-sm">bg-zinc-900/50</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components Section -->
+  <section id="components" class="py-24 px-6 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter italic">Componentes UI</h2>
+      
+      <!-- Buttons -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Botões</h3>
+        <div class="flex flex-wrap gap-6">
+          <a class="inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/20 uppercase tracking-wider py-5 px-10 text-lg">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            Botão Primário (LG)
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/20 uppercase tracking-wider py-4 px-8">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Botão Primário (MD)
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-900/20 uppercase tracking-wider py-2 px-4 text-sm">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            Botão Primário (SM)
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-6 mt-6">
+          <a class="inline-flex items-center justify-center gap-2 border border-zinc-700 hover:border-zinc-500 text-white font-bold py-5 px-10 rounded-lg transition-all uppercase tracking-wider backdrop-blur-sm">
+            Botão Secundário
+          </a>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Cards</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Service Card -->
+          <div class="group bg-zinc-900/50 rounded-2xl overflow-hidden border border-zinc-800 hover:border-red-700/50 transition-all duration-500 hover:-translate-y-2">
+            <div class="h-48 bg-zinc-800 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent"></div>
+            </div>
+            <div class="p-8">
+              <div class="w-12 h-12 bg-red-700/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-700 transition-colors">
+                <i data-lucide="shield-check" class="w-7 h-7 text-red-600 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter italic">Card de Serviço</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">Estrutura padrão para cards de serviços com hover effects.</p>
+            </div>
+          </div>
+
+          <!-- Testimonial Card -->
+          <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-800 relative hover:border-red-700/30 transition-all group">
+            <span class="absolute top-6 right-8 text-7xl text-zinc-900 font-black italic opacity-30 group-hover:text-red-700/10 transition-colors">"</span>
+            <p class="text-zinc-300 italic mb-10 leading-relaxed text-lg">"Exemplo de depoimento com destaque visual."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-red-700/20 text-red-700 rounded-full flex items-center justify-center font-black">A</div>
+              <div>
+                <p class="font-black text-sm uppercase tracking-widest text-white">Nome Cliente</p>
+                <p class="text-[10px] uppercase font-bold text-zinc-600 tracking-widest">Veículo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Card -->
+          <div class="flex gap-6 group">
+            <div class="shrink-0 w-8 h-8 rounded-full border border-red-700 flex items-center justify-center text-red-700 font-bold text-xs group-hover:bg-red-700 group-hover:text-white transition-all">
+              01
+            </div>
+            <div>
+              <h4 class="text-xl font-black uppercase tracking-tight text-white mb-2">Item de Lista</h4>
+              <p class="text-zinc-500 text-base leading-relaxed">Estrutura para diferenciais e features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo Component -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Logo</h3>
+        <div class="flex items-center gap-2">
+          <div class="relative flex items-center justify-center w-10 h-10 bg-red-700 rounded-lg transform rotate-3">
+            <span class="text-white font-black text-2xl -rotate-3">7</span>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-white font-black text-xl tracking-tighter italic">GARAGE</span>
+            <span class="text-red-600 text-[10px] font-bold tracking-[0.2em] uppercase">Estética Premium</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge/Pill -->
+      <div>
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Badges</h3>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 bg-zinc-900/90 border border-zinc-800 py-2 px-5 rounded-full text-zinc-300 text-xs md:text-sm uppercase tracking-[0.3em] font-bold">
+            <i data-lucide="star" class="w-4 h-4 text-red-600 fill-red-600"></i>
+            <span>Badge Premium</span>
+          </div>
+          <div class="absolute top-6 left-6 bg-black/80 backdrop-blur-md px-4 py-2 rounded-lg text-xs uppercase font-black tracking-[0.2em]">
+            Label Overlay
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animations Section -->
+  <section id="animations" class="py-24 px-6 border-t border-zinc-800 bg-zinc-900/20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter italic">Motion & Interação</h2>
+      
+      <!-- Animation Gallery -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Hover Scale -->
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
+          <h4 class="font-bold uppercase tracking-wider mb-6">Hover Scale</h4>
+          <button class="bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
+            Hover me
+          </button>
+          <p class="text-zinc-500 text-sm mt-4 font-mono">hover:scale-105 duration-300</p>
+        </div>
+
+        <!-- Hover Lift -->
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
+          <h4 class="font-bold uppercase tracking-wider mb-6">Hover Lift</h4>
+          <div class="bg-zinc-800 p-4 rounded-lg border border-zinc-700 transition-all duration-500 hover:-translate-y-2 hover:border-red-700/50 cursor-pointer">
+            Card com lift
+          </div>
+          <p class="text-zinc-500 text-sm mt-4 font-mono">hover:-translate-y-2 duration-500</p>
+        </div>
+
+        <!-- Image Zoom -->
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
+          <h4 class="font-bold uppercase tracking-wider mb-6">Image Zoom</h4>
+          <div class="overflow-hidden rounded-lg">
+            <div class="h-24 bg-zinc-700 transition-transform duration-700 hover:scale-110"></div>
+          </div>
+          <p class="text-zinc-500 text-sm mt-4 font-mono">hover:scale-110 duration-700</p>
+        </div>
+
+        <!-- Fade In Up -->
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
+          <h4 class="font-bold uppercase tracking-wider mb-6">Fade In Up</h4>
+          <div class="animate-[fadeInUp_1s_ease-out]">
+            <div class="h-12 bg-red-700 rounded-lg"></div>
+          </div>
+          <p class="text-zinc-500 text-sm mt-4 font-mono">translate-y-10 → 0, opacity 0 → 1</p>
+        </div>
+
+        <!-- Bounce -->
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
+          <h4 class="font-bold uppercase tracking-wider mb-6">Bounce</h4>
+          <div class="w-12 h-12 bg-red-700 rounded-full animate-bounce mx-auto"></div>
+          <p class="text-zinc-500 text-sm mt-4 font-mono">animate-bounce</p>
+        </div>
+
+        <!-- Grayscale Hover -->
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
+          <h4 class="font-bold uppercase tracking-wider mb-6">Grayscale Toggle</h4>
+          <div class="h-24 bg-zinc-600 rounded-lg grayscale group-hover:grayscale-0 transition-all duration-700"></div>
+          <p class="text-zinc-500 text-sm mt-4 font-mono">grayscale → grayscale-0 duration-700</p>
+        </div>
+      </div>
+
+      <!-- Timing Functions -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Timing & Easing</h3>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800">
+            <p class="font-bold text-red-600">300ms</p>
+            <p class="text-zinc-500 text-sm">Botões, ícones</p>
+          </div>
+          <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800">
+            <p class="font-bold text-red-600">500ms</p>
+            <p class="text-zinc-500 text-sm">Cards, borders</p>
+          </div>
+          <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800">
+            <p class="font-bold text-red-600">700ms</p>
+            <p class="text-zinc-500 text-sm">Imagens, grayscale</p>
+          </div>
+          <div class="p-6 bg-zinc-950 rounded-xl border border-zinc-800">
+            <p class="font-bold text-red-600">1000ms</p>
+            <p class="text-zinc-500 text-sm">Hero animations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layout Patterns -->
+  <section class="py-24 px-6 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter italic">Padrões de Layout</h2>
+      
+      <!-- Section Structure -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Estrutura de Seção</h3>
+        <div class="p-8 bg-zinc-900 rounded-2xl border border-zinc-800 font-mono text-sm">
+          <p class="text-zinc-500">&lt;section class="<span class="text-red-400">py-16 px-6 md:py-24</span>"&gt;</p>
+          <p class="text-zinc-500 ml-4">&lt;div class="<span class="text-red-400">max-w-6xl mx-auto</span>"&gt;</p>
+          <p class="text-zinc-500 ml-8">...content...</p>
+          <p class="text-zinc-500 ml-4">&lt;/div&gt;</p>
+          <p class="text-zinc-500">&lt;/section&gt;</p>
+        </div>
+      </div>
+
+      <!-- Grid Patterns -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Grids</h3>
+        <div class="space-y-6">
+          <div class="p-6 bg-zinc-900 rounded-xl border border-zinc-800">
+            <p class="font-mono text-sm text-red-400 mb-4">grid md:grid-cols-2 lg:grid-cols-4 gap-8</p>
+            <div class="grid grid-cols-4 gap-4">
+              <div class="h-16 bg-zinc-800 rounded-lg"></div>
+              <div class="h-16 bg-zinc-800 rounded-lg"></div>
+              <div class="h-16 bg-zinc-800 rounded-lg"></div>
+              <div class="h-16 bg-zinc-800 rounded-lg"></div>
+            </div>
+          </div>
+          <div class="p-6 bg-zinc-900 rounded-xl border border-zinc-800">
+            <p class="font-mono text-sm text-red-400 mb-4">grid md:grid-cols-2 gap-16 items-center</p>
+            <div class="grid grid-cols-2 gap-8">
+              <div class="h-32 bg-zinc-800 rounded-lg"></div>
+              <div class="h-32 bg-zinc-800 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spacing Scale -->
+      <div>
+        <h3 class="text-2xl font-black uppercase mb-8 tracking-tight text-zinc-400">Escala de Espaçamento</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <span class="text-zinc-500 w-20">gap-4</span>
+            <div class="h-4 bg-red-700/50 rounded" style="width: 16px;"></div>
+            <span class="text-zinc-500 text-sm">16px</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-zinc-500 w-20">gap-6</span>
+            <div class="h-4 bg-red-700/50 rounded" style="width: 24px;"></div>
+            <span class="text-zinc-500 text-sm">24px</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-zinc-500 w-20">gap-8</span>
+            <div class="h-4 bg-red-700/50 rounded" style="width: 32px;"></div>
+            <span class="text-zinc-500 text-sm">32px</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-zinc-500 w-20">gap-16</span>
+            <div class="h-4 bg-red-700/50 rounded" style="width: 64px;"></div>
+            <span class="text-zinc-500 text-sm">64px</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-zinc-500 w-20">py-16</span>
+            <div class="h-4 bg-red-700/50 rounded" style="width: 64px;"></div>
+            <span class="text-zinc-500 text-sm">64px vertical padding</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-zinc-500 w-20">py-24</span>
+            <div class="h-4 bg-red-700/50 rounded" style="width: 96px;"></div>
+            <span class="text-zinc-500 text-sm">96px vertical padding (desktop)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 border-t border-zinc-900 py-12 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="relative flex items-center justify-center w-10 h-10 bg-red-700 rounded-lg transform rotate-3">
+          <span class="text-white font-black text-2xl -rotate-3">7</span>
+        </div>
+        <span class="text-white font-black text-xl tracking-tighter italic">DESIGN SYSTEM</span>
+      </div>
+      <p class="text-zinc-500 text-sm">
+        Documentação oficial do design language da 7 Garage Estética Automotiva
+      </p>
+      <p class="text-zinc-600 text-xs mt-4 uppercase tracking-widest">
+        Atualizado em: 11/03/2026
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
